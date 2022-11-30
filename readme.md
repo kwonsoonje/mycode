@@ -30,7 +30,7 @@
 <br>
 <a href = "https://data.seoul.go.kr/">https://data.seoul.go.kr/</a>
 <br>
-<a href = "https://data.seoul.go.kr/">https://data.seoul.go.kr/</a>
+<a href = "https://www.data.go.kr/">https://www.data.go.kr/</a>
 
 # 분석방법
 
