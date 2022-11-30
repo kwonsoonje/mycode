@@ -28,7 +28,7 @@
 - 범죄건수
 - 총인구수 (명)
 <br>
-<a href = "https://data.seoul.go.kr/">https://data.seoul.go.kr/</a>
+<a href = "https://data.seoul.go.kr/"><strong>서울열린데이터광장</strong>   https://data.seoul.go.kr/</a>
 <br>
 <a href = "https://www.data.go.kr/">https://www.data.go.kr/</a>
 
