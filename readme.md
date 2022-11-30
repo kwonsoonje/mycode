@@ -34,4 +34,4 @@
 
 # 분석방법
 
-<img src="https://raw.githubusercontent.com/kwonsoonje/naver/main/image/abb.png?token=GHSAT0AAAAAAB2J6JIF7J7N47NRW74YUEM6Y4GWJ2Q">
+<img src="https://raw.githubusercontent.com/kwonsoonje/naver/main/image/abb.png?token=GHSAT0AAAAAAB2J6JIEIRTOO42KUNOSX5WWY4GWRMA">
