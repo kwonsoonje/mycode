@@ -1,0 +1,242 @@
+:root {
+    --bg-dark: black;
+    --done-color: #3a845d;
+    --in-progress-color: #F28705;
+    --todo-color: #5D6B86;
+    --blocked-color: red;
+    --moved-color: #4b2424;
+    --stretch-color: #019FFF;
+    --default-color: rgb(100, 100, 100);
+    --white-color: #fff;
+    --chip-bg-color: #f1f1f1;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  @media screen and (prefers-color-scheme: dark) {
+    :root {
+      --todo-color: gray;
+      --done-color: #4ecca3;
+      --moved-color: #8d6262;
+      --blocked-color: #ed6363;
+      --stretch-color: #639cd9;
+    }
+    .container {
+      background-color: var(--bg-dark);
+      border: 1px solid var(--bg-dark);
+      border-radius: 5px;
+    }
+    .chip {
+      background-color: var(--bg-dark);
+    }
+  }
+  
+  @media screen and (prefers-color-scheme: light) {
+    .chip {
+      background-color: var(--chip-bg-color);
+    }
+  }
+  
+  
+  
+  body {
+    font-family: 'Arima Madurai', 'Baloo Thambi 2', sans-serif;
+    font-size: 1.2em;
+  }
+  
+  .todo-text {
+    color: var(--todo-color);
+  }
+  .in-progress-text {
+    color: var(--in-progress-color);
+  }
+  .done-text {
+    color: var(--done-color);
+  }
+  ul li.done-text:after {
+    content: ' \2714';
+  }
+  .blocked-text {
+    color: var(--blocked-color);
+  }
+  ul li.blocked-text:after {
+    content: ' \2718';
+  }
+  .stretch-text {
+    color: var(--stretch-color);
+  }
+  .moved-text {
+    color: var(--moved-color);
+  }
+  ul li.moved-text:after {
+    content: ' \27A6';
+  }
+  
+  li.todo:before {
+    background-color: var(--todo-color);
+  }
+  li.done:before {
+    background-color: var(--done-color);
+  }
+  li.in-progress:before {
+    background-color: var(--in-progress-color);
+  }
+  li.blocked:before {
+    background: var(--blocked-color);
+  }
+  li.stretch:before {
+    background: var(--stretch-color);
+  }
+  li.moved:before {
+    background: var(--moved-color);
+  }
+  
+  ul,
+  ol {
+    counter-reset: myCounter;
+    margin-left: 0;
+    padding-left: 5px;
+    color: var(--default-color);
+  }
+  
+  li {
+    position: relative;
+    padding-left: 3em;
+    padding-top: 4px;
+    margin: 0.45em 0;
+    list-style: none;
+    line-height: 1.8em;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  ol > li:after {
+    position: absolute;
+    top: 2.1em;
+    left: 0.9em;
+    width: 2px;
+    height: calc(100% - 2em);
+    content: "";
+    background-color: rgb(203, 203, 203);
+    z-index: 0;
+  }
+  
+  ul > li {
+    position: relative;
+    padding-left: 1em;
+    margin: 0.45em 0;
+  }
+  
+  ul > li:before {
+    content: "\2022";
+    font-size: 4em;
+    padding-right: 5px;
+    line-height: 0.42em;
+    position: absolute;
+  }
+  
+  ul > li span {
+    padding-left: 1.5em;
+  }
+  
+  ol > li:before {
+    content: counter(myCounter);
+    counter-increment: myCounter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 2em;
+    padding: 0px;
+    color: var(--white-color);
+    background: var(--todo-color);
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0.9em;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .legend {
+    padding-left: 5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 1.8em;
+    font-size: 16px;
+    line-height: 2em;
+    border-radius: 0.9em;
+    display: flex;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    min-width: 85px;
+  }
+  
+  .chip div:first-of-type {
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    margin: 0 10px 0 -25px;
+    border-radius: 50%;
+  }
+  
+  .chip.todo div:first-child {
+    background-color: var(--todo-color);
+  }
+  .chip.in-progress div:first-child {
+    background-color: var(--in-progress-color);
+  }
+  .chip.done div:first-child {
+    background-color: var(--done-color);
+  }
+  .chip.blocked div:first-child {
+    background-color: var(--blocked-color);
+  }
+  .chip.stretch div:first-child {
+    background-color: var(--stretch-color);
+  }
+  .chip.moved div:first-child {
+    background-color: var(--moved-color);
+  }
+  
+  .chip.todo {
+    color: var(--todo-color);
+    border-color: var(--todo-color);
+  }
+  .chip.in-progress {
+    color: var(--in-progress-color);
+  }
+  .chip.done {
+    color: var(--done-color);
+  }
+  .chip.blocked {
+    color: var(--blocked-color);
+  }
+  .chip.stretch {
+    color: var(--stretch-color);
+  }
+  .chip.moved {
+    color: var(--moved-color);
+  }
+  
+  .date {
+    border: 1px solid;
+    border-radius: 20px;
+    text-align: center;
+    padding: 0px 10px;
+    margin-left: 30px;
+    max-width: 150px;
+  }
+  
+  .date:before, .date:after{
+    content: '\00231b';
+  }
